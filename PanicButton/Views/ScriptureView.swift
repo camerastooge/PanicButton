@@ -18,6 +18,7 @@ struct ScriptureView: View {
             HStack {
                 Spacer()
                 Text(verseReference)
+                    .background(Color())
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                     .font(.subheadline.bold())
             }
@@ -26,7 +27,7 @@ struct ScriptureView: View {
 }
 
 #Preview {
-    @Previewable var verseText = "Hello world"
-    @Previewable var verseReference = "John 3:16"
-    ScriptureView(verseText: verseText, verseReference: verseReference)
+    @Previewable @State var verseText = "For God so loved the world, that he gave his only born Son, that whoever believes in him shold not perish, but have eternal life."
+    @Previewable @State var verseReference = "John 3:16"
+    ScriptureView(verseText: $verseText, verseReference: $verseReference)
 }

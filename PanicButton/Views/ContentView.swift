@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    var verseText = "For God so loved the world, that he gave his only born Son, that whoever believes in him shold not perish, but have eternal life."
-    var verseReference = "John 3:16"
+    @State private var verseText = "For God so loved the world, that he gave his only born Son, that whoever believes in him shold not perish, but have eternal life."
+    @State private var verseReference = "John 3:16"
     
     var body: some View {
         VStack {
             //ScriptureView
-            ScriptureView(verseText: verseText, verseReference: verseReference)
+            ScriptureView(verseText: $verseText, verseReference: $verseReference)
+            
+            Spacer()
             
             //ButtonView
             Image(systemName: "globe")
