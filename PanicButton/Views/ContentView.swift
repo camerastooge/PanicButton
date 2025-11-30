@@ -12,19 +12,26 @@ struct ContentView: View {
     @State private var verseReference = "John 3:16"
     
     var body: some View {
-        VStack {
-            //ScriptureView
-            ScriptureView(verseText: $verseText, verseReference: $verseReference)
-            
-            Spacer()
-            
-            //ButtonView
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                //ScriptureView
+                ScriptureView(verseText: $verseText, verseReference: $verseReference)
+                    .padding(.horizontal, 15)
+                
+                Spacer()
+                
+                //ButtonView
+                VStack {
+                    Text("Placeholder")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+                
+                Spacer()
+            }
+            .padding()
+            .navigationTitle("Panic Button")
+            .navigationBarTitleDisplayMode(.large)
         }
-        .padding()
     }
 }
 

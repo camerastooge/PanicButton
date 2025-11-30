@@ -18,7 +18,6 @@ struct ScriptureView: View {
             HStack {
                 Spacer()
                 Text(verseReference)
-                    .background(Color())
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                     .font(.subheadline.bold())
             }
