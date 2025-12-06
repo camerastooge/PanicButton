@@ -8,25 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
+    //Environment properties
+    
+    //State properties for text view
     @State private var verseText = "For God so loved the world, that he gave his only born Son, that whoever believes in him shold not perish, but have eternal life."
     @State private var verseReference = "John 3:16"
+    
+    //local properties
+    let bibleVerses = Bundle.main.decode("scriptures.json")
     
     var body: some View {
         NavigationStack {
             VStack {
                 //ScriptureView
-                ScriptureView(verseText: $verseText, verseReference: $verseReference)
-                    .padding(.horizontal, 15)
+                ZStack {
+                    Color.textBackground.opacity(0.8)
+                    
+                    ScriptureView(verseText: $verseText, verseReference: $verseReference)
+                        .padding(15)
+                }
+                .containerRelativeFrame([.vertical]) { height, _ in
+                    return height * 0.5
+                }
                 
                 Spacer()
                 
                 //ButtonView
-                VStack {
-                    Text("Placeholder")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                Button {
+                    
+                } label: {
+                    Circle()
+                        .fill(.red)
+                        .containerRelativeFrame([.vertical]) { width, _ in
+                            return width * 0.25
+                        }
                 }
                 
-                Spacer()
+//                Spacer()
             }
             .padding()
             .navigationTitle("Panic Button")
