@@ -1,0 +1,50 @@
+# ============================================
+# Xcode / Swift / SwiftUI Project .gitignore
+# ============================================
+
+# macOS
+.DS_Store
+
+# Xcode user data
+xcuserdata/
+*.xcuserdatad/
+*.xcuserstate
+
+# Build products
+build/
+DerivedData/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Package.resolved
+# Uncomment the next line if you're building a reusable library.
+# Leave it commented for apps.
+# Package.resolved
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Fastlane generated files
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Temporary files
+*.swp
+*.swo
+*~
+*.tmp
+*.temp
+
+# Logs
+*.log
